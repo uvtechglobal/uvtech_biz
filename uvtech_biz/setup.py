@@ -16,6 +16,7 @@ DOCTYPE_LIST = [
 def ensure_setup():
     ensure_module_def()
     reload_uv_doctypes()
+    reload_workspace()
 
 
 def ensure_module_def():
@@ -32,4 +33,8 @@ def ensure_module_def():
 
 def reload_uv_doctypes():
     for dt in DOCTYPE_LIST:
-        frappe.reload_doc("uvtech_biz", "doctype", dt)
+        frappe.reload_doc("uvtech_biz", "doctype", dt, force=True)
+
+
+def reload_workspace():
+    frappe.reload_doc("uvtech_biz", "workspace", "uvtech_biz", force=True)
