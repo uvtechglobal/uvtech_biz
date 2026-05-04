@@ -15,18 +15,14 @@ scheduler_events = {
 
 fixtures = []
 
-
-after_migrate = [
-    "uvtech_biz.setup.ensure_setup"
-]
-
+before_migrate = "uvtech_biz.setup.ensure_setup"
 after_install = "uvtech_biz.setup.ensure_setup"
-<<<<<<< codex/build-uvtech_biz-saas-app-on-frappe-x6v51w
+after_migrate = ["uvtech_biz.setup.ensure_setup"]
+
+on_session_creation = "uvtech_biz.branding.set_default_workspace"
 
 
 before_migrate = "uvtech_biz.setup.ensure_setup"
 
 
 on_session_creation = "uvtech_biz.branding.set_default_workspace"
-=======
->>>>>>> main
