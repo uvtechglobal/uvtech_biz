@@ -1,0 +1,75 @@
+{
+  "doctype": "DocType",
+  "name": "Uv Company Registration",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "company_name",
+    "owner_name",
+    "email",
+    "mobile",
+    "business_type",
+    "marketplaces",
+    "status"
+  ],
+  "fields": [
+    {
+      "fieldname": "company_name",
+      "fieldtype": "Data",
+      "label": "Company Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "owner_name",
+      "fieldtype": "Data",
+      "label": "Owner Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "reqd": 1
+    },
+    {
+      "fieldname": "mobile",
+      "fieldtype": "Data",
+      "label": "Mobile"
+    },
+    {
+      "fieldname": "business_type",
+      "fieldtype": "Data",
+      "label": "Business Type"
+    },
+    {
+      "fieldname": "marketplaces",
+      "fieldtype": "Small Text",
+      "label": "Marketplaces"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nApproved\nRejected",
+      "default": "Pending"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Company Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Staff",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ]
+}
