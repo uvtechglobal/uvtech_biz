@@ -1,0 +1,25 @@
+{
+  "doctype": "Workspace",
+  "name": "UVTech Biz",
+  "label": "UVTech Biz",
+  "title": "UVTech Biz Control Center",
+  "module": "Uvtech Biz",
+  "icon": "briefcase",
+  "public": 1,
+  "is_hidden": 0,
+  "sequence_id": 1,
+  "for_user": "",
+  "parent_page": "",
+  "content": "[{\"id\":\"head-main\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>UVTech Biz</b> - Unified Commerce Ops</span>\",\"col\":12}},{\"id\":\"card-ops\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"card-master\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"card-market\",\"type\":\"card\",\"data\":{\"card_name\":\"Marketplace\",\"col\":4}},{\"id\":\"short-orders\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Order\",\"col\":3}},{\"id\":\"short-products\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Product\",\"col\":3}},{\"id\":\"short-customers\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Customer\",\"col\":3}},{\"id\":\"short-ledger\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Stock Ledger\",\"col\":3}},{\"id\":\"short-sync\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Sync Log\",\"col\":3}},{\"id\":\"short-market\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Marketplace Account\",\"col\":3}},{\"id\":\"short-company\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Company Registration\",\"col\":3}},{\"id\":\"short-sub\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"UV Subscription\",\"col\":3}}]",
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Company Admin"
+    },
+    {
+      "role": "Staff"
+    }
+  ]
+}
