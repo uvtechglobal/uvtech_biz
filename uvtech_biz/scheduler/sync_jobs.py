@@ -7,8 +7,8 @@ def sync_orders():
     orders = fetch_orders()
     for payload in orders:
         try:
-            create_order_from_payload(payload)
-            log_status("Shopify", "Success", f"Synced order {payload.get('order_id')}")
+            result = create_order_from_payload(payload)
+            log_status("Shopify", "Success", f"{result.get('status')}: {payload.get('order_id')}")
         except Exception as exc:
             log_status("Shopify", "Failed", str(exc))
             frappe.log_error(frappe.get_traceback(), "UV Order Sync Failed")

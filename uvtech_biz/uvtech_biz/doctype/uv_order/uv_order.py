@@ -15,15 +15,11 @@ class UvOrder(Document):
         if self.customer:
             return
 
-        email = (self.raw_data or {}).get("customer_email") if isinstance(self.raw_data, dict) else None
-        customer_name = (self.raw_data or {}).get("customer_name") if isinstance(self.raw_data, dict) else None
-        if not customer_name:
-            customer_name = f"Customer-{self.order_id}"
+        data = self.raw_data if isinstance(self.raw_data, dict) else {}
+        email = data.get("customer_email")
+        customer_name = data.get("customer_name") or f"Customer-{self.order_id}"
 
-        existing = None
-        if email:
-            existing = frappe.db.get_value("UV Customer", {"email": email})
-
+        existing = frappe.db.get_value("UV Customer", {"email": email}) if email else None
         if existing:
             self.customer = existing
             return
@@ -32,7 +28,7 @@ class UvOrder(Document):
             "doctype": "UV Customer",
             "customer_name": customer_name,
             "email": email,
-            "phone": (self.raw_data or {}).get("customer_phone") if isinstance(self.raw_data, dict) else None,
+            "phone": data.get("customer_phone"),
         })
         customer.insert(ignore_permissions=True)
         self.customer = customer.name
@@ -64,11 +60,14 @@ def update_inventory_for_order(order_doc):
         if not product_name:
             continue
 
-        frappe.db.set_value("UV Product", product_name, "stock_qty", ["-", item.qty], update_modified=False)
+        current_stock = frappe.db.get_value("UV Product", product_name, "stock_qty") or 0
+        new_stock = float(current_stock) - float(item.qty)
+        frappe.db.set_value("UV Product", product_name, "stock_qty", new_stock, update_modified=False)
+
         ledger = frappe.get_doc({
             "doctype": "UV Stock Ledger",
             "product": product_name,
-            "qty_change": -item.qty,
+            "qty_change": -float(item.qty),
             "source": "Order",
             "reference": order_doc.name,
         })

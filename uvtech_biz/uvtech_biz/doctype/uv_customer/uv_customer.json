@@ -1,6 +1,6 @@
 {
   "doctype": "DocType",
-  "name": "Uv Customer",
+  "name": "UV Customer",
   "module": "Uvtech Biz",
   "custom": 0,
   "istable": 0,
@@ -29,6 +29,13 @@
     }
   ],
   "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
     {
       "role": "Company Admin",
       "read": 1,
