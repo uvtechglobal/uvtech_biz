@@ -1,0 +1,84 @@
+{
+  "doctype": "DocType",
+  "name": "Uv Order",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "order_id",
+    "marketplace",
+    "customer",
+    "order_date",
+    "status",
+    "total_amount",
+    "raw_data",
+    "items"
+  ],
+  "fields": [
+    {
+      "fieldname": "order_id",
+      "fieldtype": "Data",
+      "label": "Order ID",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "marketplace",
+      "fieldtype": "Data",
+      "label": "Marketplace",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "options": "UV Customer",
+      "label": "Customer"
+    },
+    {
+      "fieldname": "order_date",
+      "fieldtype": "Datetime",
+      "label": "Order Date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nProcessing\nCompleted\nCancelled",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "raw_data",
+      "fieldtype": "JSON",
+      "label": "Raw Data"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "UV Order Item"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Company Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Staff",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ]
+}
