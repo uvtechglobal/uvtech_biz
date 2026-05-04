@@ -1,0 +1,71 @@
+{
+  "doctype": "DocType",
+  "name": "UV Subscription",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "plan",
+    "user_limit",
+    "order_limit",
+    "expiry_date",
+    "status"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "options": "UV Company Registration",
+      "label": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "plan",
+      "fieldtype": "Data",
+      "label": "Plan",
+      "reqd": 1
+    },
+    {
+      "fieldname": "user_limit",
+      "fieldtype": "Int",
+      "label": "User Limit",
+      "default": 1
+    },
+    {
+      "fieldname": "order_limit",
+      "fieldtype": "Int",
+      "label": "Order Limit",
+      "default": 100
+    },
+    {
+      "fieldname": "expiry_date",
+      "fieldtype": "Date",
+      "label": "Expiry Date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nExpired\nPaused",
+      "default": "Active"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Company Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Staff",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ]
+}

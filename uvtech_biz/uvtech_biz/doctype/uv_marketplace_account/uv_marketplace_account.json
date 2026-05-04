@@ -1,0 +1,67 @@
+{
+  "doctype": "DocType",
+  "name": "UV Marketplace Account",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "platform",
+    "api_key",
+    "api_secret",
+    "seller_id",
+    "sync_enabled",
+    "last_sync"
+  ],
+  "fields": [
+    {
+      "fieldname": "platform",
+      "fieldtype": "Select",
+      "label": "Platform",
+      "options": "Shopify\nAmazon\nFlipkart\nMeesho",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_key",
+      "fieldtype": "Data",
+      "label": "API Key"
+    },
+    {
+      "fieldname": "api_secret",
+      "fieldtype": "Password",
+      "label": "API Secret"
+    },
+    {
+      "fieldname": "seller_id",
+      "fieldtype": "Data",
+      "label": "Seller ID"
+    },
+    {
+      "fieldname": "sync_enabled",
+      "fieldtype": "Check",
+      "label": "Sync Enabled",
+      "default": 1
+    },
+    {
+      "fieldname": "last_sync",
+      "fieldtype": "Datetime",
+      "label": "Last Sync"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Company Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Staff",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ]
+}

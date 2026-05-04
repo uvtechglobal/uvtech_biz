@@ -1,0 +1,55 @@
+{
+  "doctype": "DocType",
+  "name": "UV Stock Ledger",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "product",
+    "qty_change",
+    "source",
+    "reference"
+  ],
+  "fields": [
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "options": "UV Product",
+      "label": "Product",
+      "reqd": 1
+    },
+    {
+      "fieldname": "qty_change",
+      "fieldtype": "Float",
+      "label": "Qty Change",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source",
+      "fieldtype": "Data",
+      "label": "Source"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Company Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Staff",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ]
+}
