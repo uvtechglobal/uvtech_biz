@@ -14,3 +14,10 @@ scheduler_events = {
 }
 
 fixtures = []
+
+
+after_migrate = [
+    "uvtech_biz.setup.ensure_setup"
+]
+
+after_install = "uvtech_biz.setup.ensure_setup"
