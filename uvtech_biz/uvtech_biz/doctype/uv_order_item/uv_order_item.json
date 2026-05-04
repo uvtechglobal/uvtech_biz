@@ -1,0 +1,42 @@
+{
+  "doctype": "DocType",
+  "name": "Uv Order Item",
+  "module": "Uvtech Biz",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "sku",
+    "qty",
+    "rate"
+  ],
+  "fields": [
+    {
+      "fieldname": "sku",
+      "fieldtype": "Data",
+      "label": "SKU",
+      "reqd": 1
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "reqd": 1
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "default": 0
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}
